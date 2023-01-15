@@ -1,0 +1,262 @@
+  *{
+     font-family: sans-serif;
+     box-sizing: border-box;
+    user-select: none;
+   }
+   body{
+     opacity: 1;
+     animation: trr 1s;
+     margin: 0;
+     overflow-x: hidden;
+   }
+   @keyframes trr{
+     from{opacity:0}
+     to{opacity:1}
+   }
+   input{
+     width: 100%;
+     height: auto;
+     border: 5px solid #3DADFF;
+     border-radius: 10px;
+     outline: none;
+     font-size: 40px;
+     text-align: center;
+     padding: 10px;
+     
+   }
+   body{
+     background: #f4f1ea}
+   #on{
+     min-width: inherit;
+     max-width: auto;
+     min-width: 50px; 
+     max-width: 150px; 
+     margin:0; 
+    } 
+    .box_result{
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: 100vw;
+      height: 101vh;
+      margin: 0;
+      opacity: 0;
+      justify-content: center;
+      font-size: 50px;
+      color: #fff;
+      top: -10px;
+      z-index: -50;
+
+    }
+    .box_none{
+      display: none;
+      animation: desaparecer 5s;
+    }
+    .box_correct{
+      background: rgba(0, 133, 0, 0.6);
+      opacity: 1;
+      z-index: 1000;
+      animation: aparecer 0.3s;
+    }
+    .box_incorrect{
+      background: rgba(255, 217, 0, 0.6);
+      opacity: 1;
+      z-index: 1000;
+      color: rgb(0, 0, 0);
+      animation: aparecer 0.3s;
+
+    }
+    @keyframes aparecer{
+      from{
+        opacity: 0;
+        transform: scale(1.5);
+      }
+      to{
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    @keyframes desaparecer{
+      10%{
+        opacity: 1;
+      }
+      100%{
+        opacity: 0;
+      }
+    }
+    @keyframes desaparecer2{
+      0%{
+        opacity: 1;
+        z-index: 1000;
+      }
+      80%{
+        opacity: 1;
+        z-index: 1000;
+      }
+      100%{
+        opacity: 0;
+        z-index: 0;
+      }
+    }
+   .content-input{
+     margin: 50px auto;
+     width: 300px;
+     position: relative;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     align-content: center;
+     flex-direction: column;
+     z-index: 10;
+   }
+   .ope{
+     display: flex;
+     height: auto;
+     width: auto;
+     max-width: 700px;
+     justify-content: space-evenly;;
+     font-size: 70px;
+     color: #222d6d;
+     margin: 30px auto;
+     transition: all 0.3s;
+     align-items: center;
+   }
+   .titek{
+     font-size: 50px;
+     color: #222d6d;
+     text-align: center;
+     margin-top: 5px; 
+     transition: all 1s;
+   }
+   .ani{
+     animation: re 0.5s;
+     position: relative;
+   }
+   #in::placeholder{
+     font-size: 20px;
+    }
+   #in{
+    caret-color: #289dd2;
+   }
+   #label_input{
+    width: 100%;
+    height: 96px;
+    position: absolute;
+    cursor: text;
+   }  
+   #label_input:hover::before {
+    content: "Recuerda: Enter(→) o Ir para ingresar la respuesta.";
+    width: fit-content;
+    height: fit-content;
+    color: hsl(0, 0%, 45%);
+    font-weight: bold;
+    background: rgb(255, 255, 255);
+    padding: 7px;
+    box-shadow: 0px 2px 10px rgb(174, 174, 174);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    bottom: 50%;
+    animation: desaparecer2 4s;
+    opacity: 0;
+    z-index: 0; 
+    justify-content: center;
+    margin: auto;
+   }
+   #label_input:hover::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-right: 7px solid transparent;
+    border-top: 10px solid rgb(255, 255, 255);
+    border-left: 7px solid transparent;
+    position: relative;
+    bottom: 50%;
+    animation: desaparecer2 4s;
+    opacity: 0;
+    z-index: 0; 
+    margin: auto;
+    display: block;
+   }
+   /*.content-input:hover div::before{
+    content: "";
+    width: 0px;
+    height: 0px;
+    border-bottom: 10px solid rgb(255, 247, 153);
+    border-left: 5px solid transparent ;
+    border-right: 5px solid transparent ;
+    position: fixed;
+    bottom: 200px;
+   }*/
+   #t{
+     border:  5px solid #3DADFF;
+     border-radius: 5px;
+     transform: scale(1.3);
+     background: #fff;
+   }
+   .btn-1 {
+    padding: 3px;
+    border: none;
+    border: 3px solid #289dd2;
+    border-radius: 2px;
+    background: #289cd200;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    transition: 0.3s;
+    cursor: pointer;
+    text-decoration: none;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+  }
+
+   @keyframes re{
+     25%{right: 0px}
+     50%{right:-20px}
+     75%{right: 20px}
+     100%{right: 0px}
+   }
+     .spinner{
+     position: fixed;
+     background: transparent;
+     border: 5px solid transparent;
+     border-top-color: #42445A;
+     border-radius: 50%;
+     width: 50px;
+     height: 50px;
+     animation: tr 2.5s infinite;
+   }
+   @keyframes tr{
+     0%{transform: rotate(0deg)}
+     100%{transform: rotate(360deg)}
+   }
+   .put{
+     position: fixed;
+     right: 0;
+   }
+   @media only screen and (max-width: 650px) {
+    .box {
+      flex-wrap: nowrap;
+      width: 90%;
+      margin: 10px auto;
+      max-width: 800px;
+      flex-direction: column;
+      align-content: center;
+      align-items: center;
+    }
+    .sub-box{
+      width: 90% !important;
+    }
+    .titek{
+      font-size: 30px;
+    }
+    .ope{
+      font-size: 30px;
+    }
+    input{
+      font-size: 20px;
+    }        
+}
